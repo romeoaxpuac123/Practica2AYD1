@@ -45,4 +45,22 @@ public class UserDaoImpl
         }
     }
 	
+	public boolean insertCancion(Playlist Playlist, Cancion Song) 
+    {
+        try
+        {
+            String sql = "INSERT INTO ListasCancion(name, nameCancion) VALUES (?,?)";
+            PreparedStatement preparedStatement = con.getConnection().prepareStatement(sql);
+            preparedStatement.setString(1, Playlist.getName());
+            preparedStatement.setString(2, Cancion.getName());
+            preparedStatement.executeUpdate();
+            return true;         
+        } 
+        catch (SQLException e) 
+        {
+            System.out.println("Error creando list: " + e.getMessage());
+            return false;
+        }
+    }
+	
 }
