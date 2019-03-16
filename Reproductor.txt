@@ -2,3 +2,25 @@
 metodo Reproducir(){
 	
 }
+
+//Primero se tiene una canción reproduciendo
+//y este metodo regresa un index que nos indica
+//que canción va a continuar
+metodo ReproducirAleatoriamente(int index){ 
+if (index < 0 || index >= tam) {
+            return null;
+        }
+        
+        int n = 0;
+        nodo aux = first;
+        while (n != index) {            
+            aux = aux.siguiente;
+            n++;
+        }
+        
+        return aux;
+}
+
+metodo AbrirFichero(String ruta) throws Exception {
+  player.open(new File(ruta));
+}
