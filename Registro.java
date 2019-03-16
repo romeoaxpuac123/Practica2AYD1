@@ -24,4 +24,25 @@ public class UserDaoImpl
             return false;
         }
     }
+	
+	//SE añadirá el metodo para agregar una playlist.
+	
+	public boolean insert(Playlist Playlist) 
+    {
+        try
+        {
+            String sql = "INSERT INTO Listas(username, name) VALUES (?,?)";
+            PreparedStatement preparedStatement = con.getConnection().prepareStatement(sql);
+            preparedStatement.setString(1, Playlist.getUsername());
+            preparedStatement.setString(2, Playlist.getName());
+            preparedStatement.executeUpdate();
+            return true;         
+        } 
+        catch (SQLException e) 
+        {
+            System.out.println("Error creando list: " + e.getMessage());
+            return false;
+        }
+    }
+	
 }
