@@ -25,6 +25,21 @@ public class UserDaoImpl
         }
     }
 	
+	//Metodo login para acceder a la plataforma 
+	// usuario : nombre del usuario que accede
+	// contraseña : contraseña del usuario que accede
+	//Retorna verdadero si el nombre de usuario y contraseña son válidos
+
+	Metodo login(texto usuario, texto contraseña){
+		//Retorna el resultado del ejecutar el procedimiento almacenado en la base de datos
+		booleano respuesta = DB.ejecutar('validar registro ('+usuario+','+contraseña')')
+
+		si (respuesta == verdadero){
+			ir "http://www.GrooveShark/Principal.com"
+		}
+		ir "http://www.GrooveShark/Login.com"
+	}
+	
 	//SE añadirá el metodo para agregar una playlist.
 	
 	public boolean insertLista(Playlist Playlist) 
