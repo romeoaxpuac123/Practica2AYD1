@@ -27,7 +27,7 @@ public class UserDaoImpl
 	
 	//SE añadirá el metodo para agregar una playlist.
 	
-	public boolean insert(Playlist Playlist) 
+	public boolean insertLista(Playlist Playlist) 
     {
         try
         {
