@@ -78,4 +78,24 @@ public class UserDaoImpl
         }
     }
 	
+	//Método para realizar busquedas
+	
+	public void Buscar(String busqueda, int tipo_busqueda){
+		Tabla canciones;
+		if(tipo_busqueda == 1){
+			//Busqueda por nombre
+			canciones = BD.ejecutar('SELECT canciones WHERE nombre='+busqueda)
+		}else if(tipo_busqueda == 2){
+			//Busqueda por género
+			canciones = BD.ejecutar('SELECT canciones WHERE genero='+busqueda)
+		}else if(tipo_busqueda == 3){
+			//Busqueda por pais
+			canciones = BD.ejecutar('SELECT canciones WHERE pais='+busqueda)
+		}else if(tipo_busqueda == 4){
+			//Busqueda por artísta
+			canciones = BD.ejecutar('SELECT canciones WHERE artista='+busqueda)
+		}
+		Ver(canciones);
+	}
+	
 }
