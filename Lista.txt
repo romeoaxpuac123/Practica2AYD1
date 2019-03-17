@@ -34,3 +34,16 @@ Funcion Lista agregarListaReproduccion(int idLista){
 	//Se ejecuta la consulta en la base de datos
 	return BD.execute(query);
 }
+
+//Modifica la información de una lista de reproducción
+//id: Es el identificador de la lista de reproducción
+//nombre: es el nombre de la lista de reproduccion
+//genero: Es el género musical de las canciones en la lista de reproducción
+//autor: Es el nombre del usuario que creo la lista de reproduccion
+//descripcion: Información a cerca de la lista de reproducción
+
+Funcion void agregarListaReproduccion(int id, String nombre, String genero, String autor, String descripcion){
+	String query= 'Update Lista set nombre='+nombre+' genero='+genero+' autor='+autor+' descripcion='+descripcion+'where id='+id;
+	//Se ejecuta la consulta en la base de datos
+	BD.execute(query);
+}
