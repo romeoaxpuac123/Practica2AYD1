@@ -57,3 +57,24 @@ Funcion void agregarImagen(int id, String path){
 	//Se ejecuta la consulta en la base de datos
 	BD.execute(query);
 }
+
+//Elimina una canción de la lista de reproducción
+//idLista: Es el identificador de la lista de reproducción
+//idCancion: Es el identificador de la canción a eliminar de la lista
+
+Funcion void eliminarCancionLista(int idLista, int idCancion){
+	String query= 'Delete * from Cancion where idCancion=' + idCancion +'&& idLista='+idLista;
+	//Se ejecuta la consulta en la base de datos
+	BD.execute(query);
+}
+
+
+//Añde una canción de la lista de reproducción
+//idLista: Es el identificador de la lista de reproducción
+//idCancion: Es el identificador de la canción a eliminar de la lista
+
+Funcion void agregarCancionLista(int idLista, int idCancion){
+	String query= 'Inset into Cancion (id_cancion,id_Lista) values ('+idCancion+','+idLista+')';
+	//Se ejecuta la consulta en la base de datos
+	BD.execute(query);
+}
