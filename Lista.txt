@@ -6,3 +6,12 @@ Funcion Int obtenerListaPorNombre(String nombre){
 	//Se ejecuta la consulta en la base de datos
 	return BD.execute(query);
 }
+
+//Obtiene el identificador de la lista en la base de datos haciendo una busqueda por nombre de usuario
+//nombreUsuario: es el nombre del usuario al que pertenece la lista
+
+Funcion Int obtenerListaPorNombre(String nombreUsuario){
+	String query= 'Select id from Lista Where nombreUsuario ='+nombreUsuario;
+	//Se ejecuta la consulta en la base de datos
+	return BD.execute(query);
+}
