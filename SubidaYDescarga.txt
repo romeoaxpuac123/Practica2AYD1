@@ -1,7 +1,39 @@
+import javax.sound.sampled.AudioFileFormat;
+import javax.sound.sampled.AudioSystem;
+
 public class FormularioCanciones extends JFrame {
 
 public FormularioCanciones() {
   super("Formulario Basico");
 }
+////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////
+//metodo para un audio en java
+public static Clip getSound(String file)
+	{
+		try
+		{
+			AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("sounds" + System.getProperty("file.separator") + file).getAbsoluteFile());
+			AudioFormat format = audioInputStream.getFormat();
+			DataLine.Info info = new DataLine.Info(Clip.class, format);
+			Clip sound = (Clip)AudioSystem.getLine(info);
+			sound.open(audioInputStream);
+			return sound;
+		}
+		catch(Exception e)
+		{
+			return null;
+		}
+	} public Audio() {
+        // Obtenemos los tipos
+        AudioFileFormat.Type[] tipos = AudioSystem.getAudioFileTypes();
+        
+        // y los sacamos por pantalla
+        for (AudioFileFormat.Type tipo : tipos)
+            System.out.println(tipo.getExtension());
+    }
+
 
 }
