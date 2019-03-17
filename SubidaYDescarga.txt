@@ -61,5 +61,23 @@ for (int i = 0; int<Canciones.tamaño; i++{
 	
 }
 
+////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////se agregan los cuadros te texto para añadir las caracteristicas de las canciones
+JLabel label = new JLabel("Introduce el nombre:");
+JTextField textfield = new JTextField("nombre",20);
+
+JLabel label2 = new JLabel("Introduce el artista:");
+JTextField textfield2 = new JTextField("artista",20);
+
+JLabel label3 = new JLabel("Introduce el genero:");
+JTextField textfield3 = new JTextField("genero",20);
+
+JLabel label4 = new JLabel("Introduce el pais:");
+JTextField textfield4 = new JTextField("pais",20);
+
+JButton boton = new JButton("Enviar");
+
 
 }
