@@ -47,3 +47,13 @@ Funcion void agregarListaReproduccion(int id, String nombre, String genero, Stri
 	//Se ejecuta la consulta en la base de datos
 	BD.execute(query);
 }
+
+//Agrega un imagen a la lista de reproducción
+//id: Es el identificador de la lista de reproducción
+//path: Es la ruta de la imagen
+
+Funcion void agregarImagen(int id, String path){
+	String query= 'Update Lista set image='+path+'where id='+id;
+	//Se ejecuta la consulta en la base de datos
+	BD.execute(query);
+}
