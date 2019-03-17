@@ -30,15 +30,17 @@ public class UserDaoImpl
 	// contraseña : contraseña del usuario que accede
 	//Retorna verdadero si el nombre de usuario y contraseña son válidos
 
-	Metodo login(texto usuario, texto contraseña){
+	public void login(String usuario, String contraseña){
 		//Retorna el resultado del ejecutar el procedimiento almacenado en la base de datos
-		booleano respuesta = DB.ejecutar('validar registro ('+usuario+','+contraseña')')
+		boolean respuesta = DB.ejecutar('validar_registro ('+usuario+','+contraseña')');
 
-		si (respuesta == verdadero){
-			ir "http://www.GrooveShark/Principal.com"
+		if(respuesta = verdadero){
+			ir("http://www.GrooveShark/Principal.com");
 		}
-		ir "http://www.GrooveShark/Login.com"
+		ir("http://www.GrooveShark/Login.com");
 	}
+	
+	//Revisión exitosa, realizda por: Brayan Brito - 201114566
 	
 	//SE añadirá el metodo para agregar una playlist.
 	
@@ -79,21 +81,22 @@ public class UserDaoImpl
     }
 	
 	//Método para realizar busquedas
-	
+	//busqueda: Es el valor por el que se filtran los datos
+	//tipo_busqueda: Es un valor numérico entre 1 y 4 que detirmina el tipo de búsqueda
 	public void Buscar(String busqueda, int tipo_busqueda){
 		Tabla canciones;
 		if(tipo_busqueda == 1){
 			//Busqueda por nombre
-			canciones = BD.ejecutar('SELECT canciones WHERE nombre='+busqueda)
+			canciones = BD.ejecutar('SELECT canciones WHERE nombre='+busqueda);
 		}else if(tipo_busqueda == 2){
 			//Busqueda por género
-			canciones = BD.ejecutar('SELECT canciones WHERE genero='+busqueda)
+			canciones = BD.ejecutar('SELECT canciones WHERE genero='+busqueda);
 		}else if(tipo_busqueda == 3){
 			//Busqueda por pais
-			canciones = BD.ejecutar('SELECT canciones WHERE pais='+busqueda)
+			canciones = BD.ejecutar('SELECT canciones WHERE pais='+busqueda);
 		}else if(tipo_busqueda == 4){
 			//Busqueda por artísta
-			canciones = BD.ejecutar('SELECT canciones WHERE artista='+busqueda)
+			canciones = BD.ejecutar('SELECT canciones WHERE artista='+busqueda);
 		}
 		Ver(canciones);
 	}
