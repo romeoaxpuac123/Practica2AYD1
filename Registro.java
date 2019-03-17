@@ -103,3 +103,6 @@ public class UserDaoImpl
 
 /// revisión del registro en release
 ///domingo por la mañana
+
+///verificando las versiones de este documento
+//Version 1.2.4

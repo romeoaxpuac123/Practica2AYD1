@@ -76,3 +76,4 @@ metodo ReproducirAnterior(int index){
 /// revisión del registro en release
 ///domingo por la mañana
 //Versión 1.2.3
+//se actualiza a la versión 1.2.4
