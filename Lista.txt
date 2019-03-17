@@ -25,3 +25,12 @@ Funcion void agregarListaReproduccion(int id){
 	//Se ejecuta la consulta en la base de datos
 	return BD.execute(query);
 }
+
+//Obtiene una lista con los identificadores de las canciones que pertenecen a la lista
+//idLista: Es el identificador de la lista de reproducción
+
+Funcion Lista agregarListaReproduccion(int idLista){
+	String query= 'Select id from Canciones where idLista='+idLista;
+	//Se ejecuta la consulta en la base de datos
+	return BD.execute(query);
+}
