@@ -35,5 +35,31 @@ public static Clip getSound(String file)
             System.out.println(tipo.getExtension());
     }
 
+////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////subir archivo y busqueda en base de datos
+
+JFileChooser selectorArchivos = new JFileChooser();
+selectorArchivos.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+
+// indica cual fue la accion de usuario sobre el jfilechooser
+int resultado = selectorArchivos.showOpenDialog(this);
+// muestra error si es inválido
+if ((archivo == null) || (archivo.getName().equals(""))) {
+ JOptionPane.showMessageDialog(this, "Nombre de archivo inválido", "Nombre de archivo inválido", JOptionPane.ERROR_MESSAGE);
+} // fin de if
+
+
+Metodo Busqueda(String Nombre) { 
+boolean resultado = false;
+for (int i = 0; int<Canciones.tamaño; i++{
+	if(Canciones.Name[i] = Nombre){
+		resultado = true;
+		break;
+	}
+	
+}
+
 
 }
