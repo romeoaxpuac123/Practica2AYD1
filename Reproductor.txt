@@ -34,13 +34,14 @@ metodo AbrirFichero(String ruta) throws Exception {
 
 //Enviando como parametro el indice de la canción que se esta reproduciendo actualmente
 //Se obtiene el indice de la canción que sigue
-metodo ReproducirEnOrden(int index){ 
+public int ReproducirEnOrden(int index){ 
 	if(i==listaReproduccion.count()-1){
 		return 0;
 	}
       return index +1;
 }
 
+//Revision exitosa, llevada a cabo por: Brayan Brito - 201114566
 
 //metodoso para pausar, continuar o parar una canción.
 
