@@ -1,1 +1,8 @@
-Autorización para listas
+//Obtiene el identificador de la lista en la base de datos
+//nombre: es el nombre de la lista a buscar
+
+Funcion Int obtenerListaPorNombre(String nombre){
+	String query= 'Select id from Lista Where nombre ='+nombre;
+	//Se ejecuta la consulta en la base de datos
+	return BD.execute(query);
+}
