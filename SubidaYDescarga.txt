@@ -1,0 +1,7 @@
+public class FormularioCanciones extends JFrame {
+
+public FormularioCanciones() {
+  super("Formulario Basico");
+}
+
+}
