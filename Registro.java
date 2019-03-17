@@ -32,13 +32,15 @@ public class UserDaoImpl
 
 	Metodo login(texto usuario, texto contraseña){
 		//Retorna el resultado del ejecutar el procedimiento almacenado en la base de datos
-		booleano respuesta = DB.ejecutar('validar registro ('+usuario+','+contraseña')')
+		booleano respuesta = DB.ejecutar('validar_registro('+usuario+','+contraseña')')
 
-		si (respuesta == verdadero){
+		si (respuesta = verdadero){
 			ir "http://www.GrooveShark/Principal.com"
 		}
 		ir "http://www.GrooveShark/Login.com"
 	}
+	
+	//Revisión realizada con éxito, llevada a cabo por Brayan Brito - 201114566
 	
 	//SE añadirá el metodo para agregar una playlist.
 	
@@ -79,7 +81,8 @@ public class UserDaoImpl
     }
 	
 	//Método para realizar busquedas
-	
+	//busqueda: Es el valor por el que se hace la búsqueda
+	// tipo_busqueda: Es un número que identifica el tipo de búsqueda a realizarse
 	public void Buscar(String busqueda, int tipo_busqueda){
 		Tabla canciones;
 		if(tipo_busqueda == 1){
@@ -95,6 +98,7 @@ public class UserDaoImpl
 			//Busqueda por artísta
 			canciones = BD.ejecutar('SELECT canciones WHERE artista='+busqueda)
 		}
+		//Método que muestra en la página las canciones obtenidas de la búsqueda
 		Ver(canciones);
 	}
 	
