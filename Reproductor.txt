@@ -40,3 +40,19 @@ metodo ReproducirEnOrden(int index){
 	}
       return index +1;
 }
+
+
+//metodoso para pausar, continuar o parar una canción.
+
+public void Pausa() throws Exception {
+  player.pause();
+}
+ 
+public void Continuar() throws Exception {
+  player.resume();
+}
+ 
+public void Stop() throws Exception {
+  player.stop();
+}
+
