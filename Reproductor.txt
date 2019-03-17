@@ -73,4 +73,6 @@ metodo ReproducirAnterior(int index){
       return index -1;
 }
 
+/// revisión del registro en release
+///domingo por la mañana
 
