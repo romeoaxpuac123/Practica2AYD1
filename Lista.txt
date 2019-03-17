@@ -15,3 +15,13 @@ Funcion Int obtenerListaPorNombre(String nombreUsuario){
 	//Se ejecuta la consulta en la base de datos
 	return BD.execute(query);
 }
+
+//Añade la lista seleccionada al perfil del usuario
+//id: Es el identificador la lista de reproducción que se añadirá
+//USUARIO: Es la variable de sesión que contiene el identificador del usuario actual
+
+Funcion void agregarListaReproduccion(int id){
+	String query= 'Insert into Lista (id,nombreUsuario) values ('+id+','+USUARIO+')';
+	//Se ejecuta la consulta en la base de datos
+	return BD.execute(query);
+}
