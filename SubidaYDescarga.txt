@@ -120,16 +120,17 @@ e.printStackTrace();
 }
 
 para descargar canciones
-JButton boton = new JButton("Enviar");
+JButton boton11 = new JButton("Descarga1");
 ////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////
 ////////////////////////////////////
 
 para descargar listas de reproducion al ordendor
-JButton boton = new JButton("Enviar");
+JButton boton12 = new JButton("Descarga2");
 
 for(int i = 0; i < lista.tamanio; i++){
 	
 descargarCancion(lista.nombre[i]);
 }
+//Revision romeo axpuac
