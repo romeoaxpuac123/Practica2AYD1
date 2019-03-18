@@ -109,6 +109,7 @@ public class UserDaoImpl
 ///domingo por la mañana
 <<<<<<< HEAD
 
-
+///verificando las versiones de este documento
+//utlima version 
 =======
 >>>>>>> release
