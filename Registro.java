@@ -110,6 +110,6 @@ public class UserDaoImpl
 <<<<<<< HEAD
 
 ///verificando las versiones de este documento
-//utlima version 
+//Version 1.2.4
 =======
 >>>>>>> release
