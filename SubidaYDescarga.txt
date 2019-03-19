@@ -1,0 +1,136 @@
+import javax.sound.sampled.AudioFileFormat;
+import javax.sound.sampled.AudioSystem;
+
+public class FormularioCanciones extends JFrame {
+
+public FormularioCanciones() {
+  super("Formulario Basico");
+}
+////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////
+//metodo para un audio en java
+public static Clip getSound(String file)
+	{
+		try
+		{
+			AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File("sounds" + System.getProperty("file.separator") + file).getAbsoluteFile());
+			AudioFormat format = audioInputStream.getFormat();
+			DataLine.Info info = new DataLine.Info(Clip.class, format);
+			Clip sound = (Clip)AudioSystem.getLine(info);
+			sound.open(audioInputStream);
+			return sound;
+		}
+		catch(Exception e)
+		{
+			return null;
+		}
+	} public Audio() {
+        // Obtenemos los tipos
+        AudioFileFormat.Type[] tipos = AudioSystem.getAudioFileTypes();
+        
+        // y los sacamos por pantalla
+        for (AudioFileFormat.Type tipo : tipos)
+            System.out.println(tipo.getExtension());
+    }
+
+////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////subir archivo y busqueda en base de datos
+
+JFileChooser selectorArchivos = new JFileChooser();
+selectorArchivos.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+
+// indica cual fue la accion de usuario sobre el jfilechooser
+int resultado = selectorArchivos.showOpenDialog(this);
+// muestra error si es inválido
+if ((archivo == null) || (archivo.getName().equals(""))) {
+ JOptionPane.showMessageDialog(this, "Nombre de archivo inválido", "Nombre de archivo inválido", JOptionPane.ERROR_MESSAGE);
+} // fin de if
+
+
+Metodo Busqueda(String Nombre) { 
+boolean resultado = false;
+for (int i = 0; int<Canciones.tamaño; i++{
+	if(Canciones.Name[i] = Nombre){
+		resultado = true;
+		break;
+	}
+	
+}
+
+////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////se agregan los cuadros te texto para añadir las caracteristicas de las canciones
+JLabel label = new JLabel("Introduce el nombre:");
+JTextField textfield = new JTextField("nombre",20);
+
+JLabel label2 = new JLabel("Introduce el artista:");
+JTextField textfield2 = new JTextField("artista",20);
+
+JLabel label3 = new JLabel("Introduce el genero:");
+JTextField textfield3 = new JTextField("genero",20);
+
+JLabel label4 = new JLabel("Introduce el pais:");
+JTextField textfield4 = new JTextField("pais",20);
+
+JButton boton = new JButton("Enviar");
+
+
+}
+
+
+////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////
+//////////////////////////////////// descarga de musica al ordenador
+
+public descargarCancion(String nombre){
+	try {
+// Url con la foto
+URL url = new URL(url_);
+
+// establecemos conexion
+URLConnection urlCon = url.openConnection();
+
+// Sacamos por pantalla el tipo de fichero
+System.out.println(urlCon.getContentType());
+
+
+InputStream is = urlCon.getInputStream();
+FileOutputStream fos = new FileOutputStream(nombre);
+
+
+byte[] array = new byte[1000]; // buffer temporal de lectura.
+int leido = is.read(array);
+while (leido > 0) {
+fos.write(array, 0, leido);
+leido = is.read(array);
+}
+
+// cierre de conexion y fichero.
+is.close();
+fos.close();
+} catch (Exception e) {
+e.printStackTrace();
+}
+}
+
+para descargar canciones
+JButton boton11 = new JButton("Descarga1");
+////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+////////////////////////////////////
+////////////////////////////////////
+
+para descargar listas de reproducion al ordendor
+JButton boton12 = new JButton("Descarga2");
+
+for(int i = 0; i < lista.tamanio; i++){
+	
+descargarCancion(lista.nombre[i]);
+}
+//Revision romeo axpuac
